@@ -3,16 +3,14 @@
 int main()
 {
 	double alpha;
-	int k;
 
-	printf("Valor de alfa >");
-	scanf("%lf", &alpha);
-
-	for(k=7; k<12; ++k)
-		printf("Raiz de alfa por Taylor (k=%d) = %.20lf\n", k, taylor_sqrt(alpha -1.0, k));
-
-	printf("Valor obtido pelo sqrt() = %.20lf\n", sqrt(alpha));
-	printf("Diferenca do valor calculado para sqrt = %.20lf\n", sqrt(alpha) - taylor_sqrt(alpha -1.0, k));
+	printf("#X, TAYLOR_SIN, SIN, ERRO_SIN, TAYLOR_COS, COS, ERRO_COS\n");
+	alpha = -1.5;
+	while(alpha <= 1.51)
+	{
+		printf("%.1lf %.10lf %.10lf %.4lf %.10lf %.10lf %.4lf\n", alpha, taylor_sin(alpha, 9), sin(alpha), (taylor_sin(alpha,9) - sin(alpha))/sin(alpha), taylor_cos(alpha, 9), cos(alpha), (taylor_cos(alpha,9) - cos(alpha))/cos(alpha));
+		alpha += 0.1;
+	}
 
 	return 0;
 }
