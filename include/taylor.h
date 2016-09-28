@@ -1,3 +1,6 @@
+#ifndef TAYLOR_H_
+#define TAYLOR_H_
+
 #include <stdio.h>
 #include <math.h>
 
@@ -8,3 +11,4 @@ double taylor_sqrt(double x, int kmax); //Calcula raiz quadrada de (x+1) atraves
 double taylor_sin(double x, int kmax);
 double taylor_cos(double x, int kmax);
 
+#endif

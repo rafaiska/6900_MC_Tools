@@ -3,10 +3,10 @@ DIROBJETO=./obj
 CC=gcc
 CFLAGS=-I$(DIRINCLUDE) -lm -g
 
-_DEPEND = taylor.h
+_DEPEND = taylor.h float_util.h
 DEPEND = $(patsubst %,$(DIRINCLUDE)/%,$(_DEPEND))
 
-_OBJETO = main.o taylor.o
+_OBJETO = main.o taylor.o float_util.o
 OBJETO = $(patsubst %,$(DIROBJETO)/%,$(_OBJETO))
 
 $(DIROBJETO)/%.o: %.c $(DEPEND)
